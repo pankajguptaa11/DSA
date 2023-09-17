@@ -1,11 +1,7 @@
 class Solution {
+typedef double ld;
 public:
-    vector<double> convertTemperature(double celsius) {
-        vector<double> ans;
-        double kelvin= celsius+273.15;
-        double far=(celsius*1.80)+32.00;
-        ans.push_back(kelvin);
-        ans.push_back(far);
-        return ans; 
+    vector<double> convertTemperature(ld celsius) {
+        return vector<ld>({celsius+ld(273.15), (celsius*ld(1.80))+ld(32.00)});
     }
 };
