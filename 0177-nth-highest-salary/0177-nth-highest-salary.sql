@@ -1,9 +1,9 @@
-CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+CREATE FUNCTION getNthHighestSalary(@N INT) RETURNS INT AS
 BEGIN
-SET N = N-1;
-  RETURN (
-      SELECT DISTINCT(salary) from Employee order by salary DESC
-      LIMIT 1 OFFSET N
-      
-  );
+    RETURN (
+        /* Write your T-SQL query statement below. */
+          SELECT DISTINCT SALARY FROM Employee ORDER BY Salary DESC
+          OFFSET @N - 1 ROWS
+          FETCH NEXT 1 ROWS ONLY       
+    );
 END
